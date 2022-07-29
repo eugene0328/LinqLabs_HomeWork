@@ -37,5 +37,11 @@ namespace LinqLabs
             Frm作業_3 f = new Frm作業_3();
             f.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Frm作業_4 f = new Frm作業_4();
+            f.Show();
+        }
     }
 }

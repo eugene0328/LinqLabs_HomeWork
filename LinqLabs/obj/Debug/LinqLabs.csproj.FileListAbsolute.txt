@@ -149,3 +149,4 @@ C:\Users\Student\source\repos\LinqLabs (HomeWork)\LinqLabs\obj\Debug\LinqLabs.cs
 C:\Users\Student\source\repos\LinqLabs (HomeWork)\LinqLabs\obj\Debug\LinqLabs.csproj.CoreCompileInputs.cache
 C:\Users\Student\source\repos\LinqLabs (HomeWork)\LinqLabs\obj\Debug\LinqLabs.exe
 C:\Users\Student\source\repos\LinqLabs (HomeWork)\LinqLabs\obj\Debug\LinqLabs.pdb
+C:\Users\Student\source\repos\LinqLabs (HomeWork)\LinqLabs\obj\Debug\LinqLabs.作業.Frm作業_4.resources
