@@ -56,6 +56,10 @@ namespace LinqLabs.作業
             this.button5 = new System.Windows.Forms.Button();
             this.button34 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.nwDataSet1 = new LinqLabs.NWDataSet();
+            this.ordersTableAdapter1 = new LinqLabs.NWDataSetTableAdapters.OrdersTableAdapter();
+            this.productsTableAdapter1 = new LinqLabs.NWDataSetTableAdapters.ProductsTableAdapter();
+            this.order_DetailsTableAdapter1 = new LinqLabs.NWDataSetTableAdapters.Order_DetailsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -67,6 +71,7 @@ namespace LinqLabs.作業
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -75,13 +80,13 @@ namespace LinqLabs.作業
             this.label3.Location = new System.Drawing.Point(11, 323);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(215, 22);
+            this.label3.Size = new System.Drawing.Size(144, 16);
             this.label3.TabIndex = 134;
             this.label3.Text = "LINQ to Northwind Entity";
             // 
             // button10
             // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button10.BackColor = System.Drawing.Color.Lavender;
             this.button10.Location = new System.Drawing.Point(13, 487);
             this.button10.Margin = new System.Windows.Forms.Padding(6);
             this.button10.Name = "button10";
@@ -89,6 +94,7 @@ namespace LinqLabs.作業
             this.button10.TabIndex = 133;
             this.button10.Text = " Orders -  Group by 年 / 月";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // label4
             // 
@@ -96,13 +102,13 @@ namespace LinqLabs.作業
             this.label4.Location = new System.Drawing.Point(5, 27);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 22);
+            this.label4.Size = new System.Drawing.Size(98, 16);
             this.label4.TabIndex = 126;
             this.label4.Text = "LINQ - GroupBy";
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.Blue;
+            this.button4.BackColor = System.Drawing.Color.SlateBlue;
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(6, 66);
             this.button4.Margin = new System.Windows.Forms.Padding(6);
@@ -111,11 +117,12 @@ namespace LinqLabs.作業
             this.button4.TabIndex = 85;
             this.button4.Text = "int[]  分三群 - No LINQ";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.Color.LightGreen;
-            this.button9.Location = new System.Drawing.Point(15, 686);
+            this.button9.BackColor = System.Drawing.Color.LavenderBlush;
+            this.button9.Location = new System.Drawing.Point(14, 686);
             this.button9.Margin = new System.Windows.Forms.Padding(6);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(658, 51);
@@ -125,8 +132,8 @@ namespace LinqLabs.作業
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.LightGreen;
-            this.button2.Location = new System.Drawing.Point(17, 560);
+            this.button2.BackColor = System.Drawing.Color.LavenderBlush;
+            this.button2.Location = new System.Drawing.Point(14, 560);
             this.button2.Margin = new System.Windows.Forms.Padding(5);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(658, 54);
@@ -151,13 +158,13 @@ namespace LinqLabs.作業
             this.label1.Location = new System.Drawing.Point(12, 151);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 22);
+            this.label1.Size = new System.Drawing.Size(103, 16);
             this.label1.TabIndex = 128;
             this.label1.Text = "LINQ to FileInfo[]";
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.button6.ForeColor = System.Drawing.Color.Black;
             this.button6.Location = new System.Drawing.Point(9, 247);
             this.button6.Margin = new System.Windows.Forms.Padding(6);
@@ -166,35 +173,38 @@ namespace LinqLabs.作業
             this.button6.TabIndex = 93;
             this.button6.Text = "  依 年 分組檔案 (大=>小)";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button8.BackColor = System.Drawing.Color.Lavender;
             this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Location = new System.Drawing.Point(17, 361);
+            this.button8.Location = new System.Drawing.Point(12, 361);
             this.button8.Margin = new System.Windows.Forms.Padding(6);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(618, 51);
             this.button8.TabIndex = 94;
             this.button8.Text = "NW Products 低中高 價產品 ";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button38
             // 
-            this.button38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.button38.ForeColor = System.Drawing.Color.Black;
-            this.button38.Location = new System.Drawing.Point(15, 183);
+            this.button38.Location = new System.Drawing.Point(9, 183);
             this.button38.Margin = new System.Windows.Forms.Padding(6);
             this.button38.Name = "button38";
             this.button38.Size = new System.Drawing.Size(618, 51);
             this.button38.TabIndex = 95;
             this.button38.Text = "依 檔案大小 分組檔案 (大=>小)";
             this.button38.UseVisualStyleBackColor = false;
+            this.button38.Click += new System.EventHandler(this.button38_Click);
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.LightGreen;
-            this.button1.Location = new System.Drawing.Point(17, 624);
+            this.button1.BackColor = System.Drawing.Color.LavenderBlush;
+            this.button1.Location = new System.Drawing.Point(14, 624);
             this.button1.Margin = new System.Windows.Forms.Padding(5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(658, 51);
@@ -204,14 +214,15 @@ namespace LinqLabs.作業
             // 
             // button15
             // 
-            this.button15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button15.Location = new System.Drawing.Point(17, 415);
+            this.button15.BackColor = System.Drawing.Color.Lavender;
+            this.button15.Location = new System.Drawing.Point(12, 424);
             this.button15.Margin = new System.Windows.Forms.Padding(6);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(618, 51);
             this.button15.TabIndex = 121;
             this.button15.Text = " Orders -  Group by 年";
             this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // treeView1
             // 
@@ -224,7 +235,7 @@ namespace LinqLabs.作業
             // 
             // lblMaster
             // 
-            this.lblMaster.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblMaster.BackColor = System.Drawing.Color.Indigo;
             this.lblMaster.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblMaster.Font = new System.Drawing.Font("新細明體", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblMaster.ForeColor = System.Drawing.Color.White;
@@ -301,7 +312,7 @@ namespace LinqLabs.作業
             // 
             // lblDetails
             // 
-            this.lblDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblDetails.BackColor = System.Drawing.Color.Indigo;
             this.lblDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDetails.Font = new System.Drawing.Font("新細明體", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblDetails.ForeColor = System.Drawing.Color.White;
@@ -384,6 +395,7 @@ namespace LinqLabs.作業
             // 
             // button5
             // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.button5.ForeColor = System.Drawing.Color.Black;
             this.button5.Location = new System.Drawing.Point(321, 813);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
@@ -395,6 +407,7 @@ namespace LinqLabs.作業
             // 
             // button34
             // 
+            this.button34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.button34.ForeColor = System.Drawing.Color.Black;
             this.button34.Location = new System.Drawing.Point(18, 813);
             this.button34.Margin = new System.Windows.Forms.Padding(4);
@@ -406,8 +419,8 @@ namespace LinqLabs.作業
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.LightGreen;
-            this.button3.Location = new System.Drawing.Point(18, 748);
+            this.button3.BackColor = System.Drawing.Color.LavenderBlush;
+            this.button3.Location = new System.Drawing.Point(14, 748);
             this.button3.Margin = new System.Windows.Forms.Padding(5);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(657, 42);
@@ -415,9 +428,26 @@ namespace LinqLabs.作業
             this.button3.Text = "     NW 產品有任何一筆單價大於300 ?";
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // nwDataSet1
+            // 
+            this.nwDataSet1.DataSetName = "NWDataSet";
+            this.nwDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ordersTableAdapter1
+            // 
+            this.ordersTableAdapter1.ClearBeforeFill = true;
+            // 
+            // productsTableAdapter1
+            // 
+            this.productsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // order_DetailsTableAdapter1
+            // 
+            this.order_DetailsTableAdapter1.ClearBeforeFill = true;
+            // 
             // Frm作業_4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1706, 890);
             this.Controls.Add(this.tableLayoutPanel3);
@@ -437,6 +467,7 @@ namespace LinqLabs.作業
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -470,5 +501,9 @@ namespace LinqLabs.作業
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button34;
+        private NWDataSet nwDataSet1;
+        private NWDataSetTableAdapters.OrdersTableAdapter ordersTableAdapter1;
+        private NWDataSetTableAdapters.ProductsTableAdapter productsTableAdapter1;
+        private NWDataSetTableAdapters.Order_DetailsTableAdapter order_DetailsTableAdapter1;
     }
 }
