@@ -29,9 +29,11 @@ namespace LinqLabs.作業
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button36 = new System.Windows.Forms.Button();
             this.button37 = new System.Windows.Forms.Button();
@@ -41,49 +43,57 @@ namespace LinqLabs.作業
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(479, 33);
-            this.chart1.Margin = new System.Windows.Forms.Padding(4);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
+            this.chart1.Location = new System.Drawing.Point(319, 22);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(643, 333);
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "chn";
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "eng";
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "math";
+            this.chart1.Series.Add(series7);
+            this.chart1.Series.Add(series8);
+            this.chart1.Series.Add(series9);
+            this.chart1.Size = new System.Drawing.Size(429, 222);
             this.chart1.TabIndex = 147;
             this.chart1.Text = "chart1";
             // 
             // button36
             // 
-            this.button36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button36.Location = new System.Drawing.Point(25, 33);
-            this.button36.Margin = new System.Windows.Forms.Padding(4);
+            this.button36.BackColor = System.Drawing.Color.Plum;
+            this.button36.Location = new System.Drawing.Point(17, 22);
             this.button36.Name = "button36";
-            this.button36.Size = new System.Drawing.Size(375, 75);
+            this.button36.Size = new System.Drawing.Size(250, 50);
             this.button36.TabIndex = 146;
             this.button36.Text = "搜尋 班級學生成績";
             this.button36.UseVisualStyleBackColor = false;
+            this.button36.Click += new System.EventHandler(this.button36_Click);
             // 
             // button37
             // 
-            this.button37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button37.Location = new System.Drawing.Point(25, 131);
-            this.button37.Margin = new System.Windows.Forms.Padding(4);
+            this.button37.BackColor = System.Drawing.Color.Plum;
+            this.button37.Location = new System.Drawing.Point(17, 87);
             this.button37.Name = "button37";
-            this.button37.Size = new System.Drawing.Size(375, 75);
+            this.button37.Size = new System.Drawing.Size(250, 50);
             this.button37.TabIndex = 145;
             this.button37.Text = "每個學生個人成績";
             this.button37.UseVisualStyleBackColor = false;
+            this.button37.Click += new System.EventHandler(this.button37_Click);
             // 
             // button33
             // 
-            this.button33.Location = new System.Drawing.Point(25, 312);
-            this.button33.Margin = new System.Windows.Forms.Padding(4);
+            this.button33.BackColor = System.Drawing.Color.LightPink;
+            this.button33.Location = new System.Drawing.Point(17, 208);
             this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(375, 75);
+            this.button33.Size = new System.Drawing.Size(250, 50);
             this.button33.TabIndex = 143;
             this.button33.Text = "自己分群";
             this.button33.UseVisualStyleBackColor = false;
@@ -91,13 +101,14 @@ namespace LinqLabs.作業
             // 
             // Frm作業_3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1228, 623);
+            this.ClientSize = new System.Drawing.Size(819, 415);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.button36);
             this.Controls.Add(this.button37);
             this.Controls.Add(this.button33);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Frm作業_3";
             this.Text = "Frm作業_3";
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
