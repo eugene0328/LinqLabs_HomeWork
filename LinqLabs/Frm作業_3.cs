@@ -39,6 +39,11 @@ namespace LinqLabs.作業
 
         private void button33_Click(object sender, EventArgs e)
         {
+            chart1.Series.Clear();
+            chart1.Series.Add("人數");
+            chart1.Series.Add("eng");
+            chart1.Series.Add("math");
+
             // split=> 數學成績 分成 三群 '待加強'(60~69) '佳'(70~89) '優良'(90~100) 
             var q = from ss in students_scores
                     group ss by Key(ss.Math) into g
@@ -54,7 +59,6 @@ namespace LinqLabs.作業
 
         private void button36_Click(object sender, EventArgs e)
         {
-            button33.Enabled = false;
             var q = from ss in students_scores
                     select ss;
 
@@ -74,7 +78,6 @@ namespace LinqLabs.作業
 
         private void button37_Click(object sender, EventArgs e)
         {
-            button33.Enabled = false;
             var q = from ss in students_scores
                     where ss.Name == "Jack"
                     select ss;

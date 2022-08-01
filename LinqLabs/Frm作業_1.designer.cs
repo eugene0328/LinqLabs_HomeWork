@@ -38,6 +38,7 @@ namespace MyHomeWork
             this.lblMaster = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button37 = new System.Windows.Forms.Button();
             this.button36 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -59,7 +60,6 @@ namespace MyHomeWork
             this.ordersTableAdapter1 = new LinqLabs.NWDataSetTableAdapters.OrdersTableAdapter();
             this.order_DetailsTableAdapter1 = new LinqLabs.NWDataSetTableAdapters.Order_DetailsTableAdapter();
             this.productsTableAdapter1 = new LinqLabs.NWDataSetTableAdapters.ProductsTableAdapter();
-            this.button37 = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -94,7 +94,7 @@ namespace MyHomeWork
             // 
             // lblDetails
             // 
-            this.lblDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblDetails.BackColor = System.Drawing.Color.PaleVioletRed;
             this.lblDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDetails.Font = new System.Drawing.Font("新細明體", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblDetails.ForeColor = System.Drawing.Color.White;
@@ -155,7 +155,7 @@ namespace MyHomeWork
             // 
             // lblMaster
             // 
-            this.lblMaster.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblMaster.BackColor = System.Drawing.Color.PaleVioletRed;
             this.lblMaster.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblMaster.Font = new System.Drawing.Font("新細明體", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblMaster.ForeColor = System.Drawing.Color.White;
@@ -214,6 +214,18 @@ namespace MyHomeWork
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 136;
             // 
+            // button37
+            // 
+            this.button37.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.button37.Location = new System.Drawing.Point(57, 288);
+            this.button37.Margin = new System.Windows.Forms.Padding(4);
+            this.button37.Name = "button37";
+            this.button37.Size = new System.Drawing.Size(372, 39);
+            this.button37.TabIndex = 149;
+            this.button37.Text = "每個學生個人成績";
+            this.button37.UseVisualStyleBackColor = false;
+            this.button37.Click += new System.EventHandler(this.button37_Click);
+            // 
             // button36
             // 
             this.button36.BackColor = System.Drawing.Color.LightSkyBlue;
@@ -264,7 +276,7 @@ namespace MyHomeWork
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button6.BackColor = System.Drawing.Color.LightSalmon;
             this.button6.Location = new System.Drawing.Point(528, 72);
             this.button6.Margin = new System.Windows.Forms.Padding(5);
             this.button6.Name = "button6";
@@ -288,7 +300,7 @@ namespace MyHomeWork
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button1.BackColor = System.Drawing.Color.LightSalmon;
             this.button1.Location = new System.Drawing.Point(528, 126);
             this.button1.Margin = new System.Windows.Forms.Padding(5);
             this.button1.Name = "button1";
@@ -312,7 +324,7 @@ namespace MyHomeWork
             // 
             // button13
             // 
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button13.BackColor = System.Drawing.Color.LightSalmon;
             this.button13.ForeColor = System.Drawing.Color.Black;
             this.button13.Location = new System.Drawing.Point(989, 249);
             this.button13.Margin = new System.Windows.Forms.Padding(5);
@@ -340,7 +352,7 @@ namespace MyHomeWork
             // 
             // button12
             // 
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button12.BackColor = System.Drawing.Color.LightSalmon;
             this.button12.ForeColor = System.Drawing.Color.Black;
             this.button12.Location = new System.Drawing.Point(840, 249);
             this.button12.Margin = new System.Windows.Forms.Padding(5);
@@ -426,18 +438,6 @@ namespace MyHomeWork
             // productsTableAdapter1
             // 
             this.productsTableAdapter1.ClearBeforeFill = true;
-            // 
-            // button37
-            // 
-            this.button37.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.button37.Location = new System.Drawing.Point(57, 288);
-            this.button37.Margin = new System.Windows.Forms.Padding(4);
-            this.button37.Name = "button37";
-            this.button37.Size = new System.Drawing.Size(372, 39);
-            this.button37.TabIndex = 149;
-            this.button37.Text = "每個學生個人成績";
-            this.button37.UseVisualStyleBackColor = false;
-            this.button37.Click += new System.EventHandler(this.button37_Click);
             // 
             // Frm作業_1
             // 
