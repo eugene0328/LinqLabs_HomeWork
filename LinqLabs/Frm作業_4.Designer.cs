@@ -129,6 +129,7 @@ namespace LinqLabs.作業
             this.button9.TabIndex = 91;
             this.button9.Text = "     NW 產品最高單價前 5 筆 (包括類別名稱)";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button2
             // 
@@ -140,6 +141,7 @@ namespace LinqLabs.作業
             this.button2.TabIndex = 129;
             this.button2.Text = "總銷售金額";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button7
             // 
@@ -211,6 +213,7 @@ namespace LinqLabs.作業
             this.button1.TabIndex = 125;
             this.button1.Text = "銷售最好的top 5業務員";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button15
             // 
@@ -427,6 +430,7 @@ namespace LinqLabs.作業
             this.button3.TabIndex = 135;
             this.button3.Text = "     NW 產品有任何一筆單價大於300 ?";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // nwDataSet1
             // 

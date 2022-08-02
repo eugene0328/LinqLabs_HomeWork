@@ -147,6 +147,42 @@ namespace LinqLabs.作業
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Clear();
+            var q = (from i in nwDataSet1.Order_Details.AsEnumerable()
+                     select new { 總銷售金額 = totalPrice(i) }).Sum(i => i.總銷售金額);
+
+            MessageBox.Show($"總銷售金額為 {q:n2} 元");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Clear();
+            var q = from o in nwDataSet1.Order_Details
+                    select o;
+
+            dataGridView1.DataSource = q.ToList();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Clear();
+            var q = from o in nwDataSet1.Order_Details
+                    select o;
+
+            dataGridView1.DataSource = q.ToList();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Clear();
+            var q = from p in nwDataSet1.Order_Details
+                    select p;
+
+            dataGridView1.DataSource = q.ToList();
+        }
+
         private void Clear()
         {
             dataGridView1.Columns.Clear();
@@ -195,6 +231,11 @@ namespace LinqLabs.作業
                 return "中";
             else
                 return "高";
+        }
+
+        private decimal totalPrice(NWDataSet.Order_DetailsRow i)
+        {
+            return i.UnitPrice * Convert.ToDecimal(i.Quantity) * (1 - Convert.ToDecimal(i.Discount));
         }
     }
 }
