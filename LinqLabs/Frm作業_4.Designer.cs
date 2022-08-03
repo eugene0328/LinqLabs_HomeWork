@@ -60,6 +60,8 @@ namespace LinqLabs.作業
             this.ordersTableAdapter1 = new LinqLabs.NWDataSetTableAdapters.OrdersTableAdapter();
             this.productsTableAdapter1 = new LinqLabs.NWDataSetTableAdapters.ProductsTableAdapter();
             this.order_DetailsTableAdapter1 = new LinqLabs.NWDataSetTableAdapters.Order_DetailsTableAdapter();
+            this.categoriesTableAdapter1 = new LinqLabs.NWDataSetTableAdapters.CategoriesTableAdapter();
+            this.employeesTableAdapter1 = new LinqLabs.NWDataSetTableAdapters.EmployeesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -449,6 +451,14 @@ namespace LinqLabs.作業
             // 
             this.order_DetailsTableAdapter1.ClearBeforeFill = true;
             // 
+            // categoriesTableAdapter1
+            // 
+            this.categoriesTableAdapter1.ClearBeforeFill = true;
+            // 
+            // employeesTableAdapter1
+            // 
+            this.employeesTableAdapter1.ClearBeforeFill = true;
+            // 
             // Frm作業_4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -509,5 +519,7 @@ namespace LinqLabs.作業
         private NWDataSetTableAdapters.OrdersTableAdapter ordersTableAdapter1;
         private NWDataSetTableAdapters.ProductsTableAdapter productsTableAdapter1;
         private NWDataSetTableAdapters.Order_DetailsTableAdapter order_DetailsTableAdapter1;
+        private NWDataSetTableAdapters.CategoriesTableAdapter categoriesTableAdapter1;
+        private NWDataSetTableAdapters.EmployeesTableAdapter employeesTableAdapter1;
     }
 }

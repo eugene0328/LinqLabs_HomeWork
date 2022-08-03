@@ -18,6 +18,8 @@ namespace LinqLabs.作業
             ordersTableAdapter1.Fill(nwDataSet1.Orders);
             order_DetailsTableAdapter1.Fill(nwDataSet1.Order_Details);
             productsTableAdapter1.Fill(nwDataSet1.Products);
+            categoriesTableAdapter1.Fill(nwDataSet1.Categories);
+            employeesTableAdapter1.Fill(nwDataSet1.Employees);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -159,8 +161,14 @@ namespace LinqLabs.作業
         private void button1_Click(object sender, EventArgs e)
         {
             Clear();
-            var q = from o in nwDataSet1.Order_Details
-                    select o;
+            var q = (from o in nwDataSet1.Order_Details
+                    group o by new { o.OrdersRow.EmployeesRow.EmployeeID, o.OrdersRow.EmployeesRow.FirstName, o.OrdersRow.EmployeesRow.LastName } into g
+                    select new
+                    {
+                        EmployeeID = g.Key.EmployeeID,
+                        FullName = $"{g.Key.FirstName} {g.Key.LastName}",
+                        銷售總額 = g.Sum(p => p.UnitPrice * Convert.ToDecimal(p.Quantity) * Convert.ToDecimal(1 - p.Discount))
+                    }).OrderByDescending(emp => emp.銷售總額).Take(5).Select(emp => new { emp.EmployeeID, emp.FullName, 銷售總額 = $"{emp.銷售總額:n2}" });
 
             dataGridView1.DataSource = q.ToList();
         }
@@ -168,8 +176,9 @@ namespace LinqLabs.作業
         private void button9_Click(object sender, EventArgs e)
         {
             Clear();
-            var q = from o in nwDataSet1.Order_Details
-                    select o;
+            var q = (from p in nwDataSet1.Products.AsEnumerable()
+                     orderby p.UnitPrice descending
+                     select new { 類別名稱 = p.CategoriesRow.CategoryName, 產品名稱 = p.ProductName, 產品單價 = $"{p.UnitPrice:n2}" }).Take(5);
 
             dataGridView1.DataSource = q.ToList();
         }
@@ -178,9 +187,15 @@ namespace LinqLabs.作業
         {
             Clear();
             var q = from p in nwDataSet1.Order_Details
+                    where p.UnitPrice > 300
                     select p;
-
-            dataGridView1.DataSource = q.ToList();
+            if (q.Count() > 0)
+            {
+                dataGridView1.DataSource = q.ToList();
+            }
+            else {
+                MessageBox.Show("無任何產品的單價大於300");
+            }
         }
 
         private void Clear()
