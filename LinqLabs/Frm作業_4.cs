@@ -198,9 +198,38 @@ namespace LinqLabs.作業
             }
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Clear();
+            var q = from i in nwDataSet1.Order_Details.AsEnumerable()
+                    group i by i.OrdersRow.OrderDate.Year into g
+                    orderby g.Key
+                    select new { Year = g.Key, 當年銷售金額 = g.Sum(i => i.UnitPrice * Convert.ToDecimal(i.Quantity) * Convert.ToDecimal((1 - i.Discount))), Info = g };
+            var q1 = from i in nwDataSet1.Order_Details.AsEnumerable()
+                     group i by i.OrdersRow.OrderDate.Year into g
+                     orderby g.Key
+                     select new { Year = g.Key + 1, 當年銷售金額 = g.Sum(i => i.UnitPrice * Convert.ToDecimal(i.Quantity) * Convert.ToDecimal((1 - i.Discount))), Info = g };
+            var q2 = from i in q
+                     join j in q1 on i.Year equals j.Year
+                     select new { Year = i.Year, 當年銷售金額 = i.當年銷售金額, 年成長率 = ((i.當年銷售金額 - j.當年銷售金額) / j.當年銷售金額) * 100 };
+            var q3 = q2.Select(i => new { Year = i.Year, 當年銷售金額 = i.當年銷售金額, 年成長率 = i.年成長率.ToString("0.00") + "%" });
+
+            dataGridView1.DataSource = q.ToList();
+            dataGridView2.DataSource = q3.ToList();
+            foreach (var group in q)
+            {
+                TreeNode tn = treeView1.Nodes.Add(group.Year.ToString());
+
+                foreach (var item in group.Info)
+                {
+                    tn.Nodes.Add(item.OrderID.ToString() + ": " + item.UnitPrice.ToString());
+                }
+            }
+        }
         private void Clear()
         {
             dataGridView1.Columns.Clear();
+            dataGridView2.Columns.Clear();
             treeView1.Nodes.Clear();
         }
 

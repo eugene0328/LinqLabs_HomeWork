@@ -409,6 +409,7 @@ namespace LinqLabs.作業
             this.button5.TabIndex = 139;
             this.button5.Text = "年 銷售成長率";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button34
             // 
